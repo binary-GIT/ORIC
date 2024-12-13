@@ -1,0 +1,149 @@
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #f4f5f7;
+  border-right: 1px solid #d1d1d1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*overflow: hidden;*/
+  transition: width 0.3s ease;
+  z-index: 1300;
+}
+
+/* Sidebar collapsed and expanded states */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.expanded {
+  width: 180px;
+}
+
+/* Toggle button */
+.toggle-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid #d1d1d1;
+  cursor: pointer;
+}
+
+/* Menu list styles */
+.menu {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px 15px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Center align icons when collapsed */
+.sidebar.collapsed .menu-item {
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  transition: margin 0.3s ease;
+}
+
+.sidebar.collapsed .menu-icon {
+  margin-right: 0;
+}
+
+.menu-label {
+  white-space: nowrap;
+}
+
+/* Sub-menu styles (for Submit dropdown) */
+.sub-menu {
+  list-style: none;
+  padding-left: 20px; /* Indentation for sub-menu items */
+  margin: 0;
+  background-color: #eaeaea; /* Sub-menu background */
+  border-radius: 5px;
+  max-height: 0; /* Initially hidden */
+  /*overflow: hidden;*/
+  transition: max-height 0.3s ease-in-out; /* Smooth transition */
+}
+
+.sub-menu-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sub-menu-item:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown when expanded */
+.sidebar .sub-menu {
+  max-height: 300px; /* Adjust the max-height to your preference */
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Makes the entire area clickable */
+}
+
+.menu-link:hover {
+  background-color: #f0f0f0; /* Optional: Add a hover effect */
+}
+
+.menu-icon {
+  margin-right: 10px; /* Space between icon and label */
+}
+
+.menu-label {
+  font-size: 14px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar.expanded {
+    width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    position: absolute;
+    z-index: 1500;
+    height: 100vh;
+  }
+
+  .sidebar.collapsed {
+    width: 60px;
+  }
+
+  .sidebar.expanded {
+    width: 200px;
+  }
+}
+ 

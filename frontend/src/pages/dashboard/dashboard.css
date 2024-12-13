@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/******************************* Sidebar styling ************************************/
+.sidebar {
+    margin-top: 80px;
+    background-color: #3d7788;
+    color: white !important;
+    /* Set the font color to white */
+    font-weight: 600 !important;
+    /* Make the font heavier */
+}
+
+.menu-item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit !important;
+    /* Ensure inheritance from .sidebar */
+    font-weight: inherit !important;
+    /* Ensure font weight is inherited */
+}
+
+.menu-link:hover {
+    background-color: #32616e;
+    /* Add a hover effect for better UI */
+    border-radius: 4px;
+    /* Optional styling */
+}
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+.sidebar .menu-icon {
+    color: white !important;
+    /* Force icon color to white */
+}
+
+/* Change text color and font weight */
+.sidebar .menu-label {
+    color: white !important;
+    /* Set text color to white */
+    font-weight: bold !important;
+    /* Make the text heavier */
+}
+
+/* Ensure menu-link doesn't override text color */
+.sidebar .menu-link {
+    color: inherit;
+    /* Inherit color from parent (sidebar or menu-label) */
+    text-decoration: none;
+    /* Remove underline or link styles */
+}
+
+/* <*********************************************************************************************************************************> */
+.hero-heading {
+    background-color: #32616e;
+    width: fit-content;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 20px;
+    gap: 25rem;
+    align-items: center;
+}
+.hero-heading-left 
+{
+    color: white;
+}
+.icon
+{
+    font-size: xx-large;
+}
+.hero-section
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    margin-top: 2rem;
+    margin-left: 8rem;
+}
+.hero-section-left h1
+{
+    color: #32616e;
+}
+.hero-section-left img{
+    height: 160px;
+}
+.hero-section-left-f1
+{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.hero-section-2
+{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border: 1px solid;
+    padding: 30px;
+    background-color: #32616e;
+    color: white;
+}
+.hero-section-2 button
+{
+    background-color: #3d7788;
+    padding: 30px 70px;
+}
