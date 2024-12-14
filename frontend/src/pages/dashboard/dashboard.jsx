@@ -14,7 +14,7 @@ export default function Dashboard() {
             <div className="hero-heading">
                 <div className="hero-heading-left">
                     <h1>Welcome</h1>
-                    <h1>Syed Sumam Zaidi</h1>
+                    <h1>Dashboard User</h1>
                 </div>
                 <div className="icon">
                     <h1>

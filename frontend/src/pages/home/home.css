@@ -1,0 +1,203 @@
+/* Container */
+.home-container {
+    display: flex;
+    background-color: #f8f9fc;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 200px;
+    background-color: #3d7788; /* Sidebar color */
+    color: white;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    justify-content: flex-start;
+    padding: 5px;
+    margin-right: 50px;
+    width: 100%;
+    /* padding-right: 300px; */
+  }
+  
+  /* Header Section */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    flex: 1;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    margin-left: 10rem;
+    
+  }
+  
+  .user-details {
+    margin-right: 10px;
+    text-align: right;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    display: block;
+  }
+  
+  .user-year {
+    color: #888;
+  }
+  
+  .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  /* Welcome Section */
+  .welcome-section {
+    display: flex;
+    background-color: #e3e8ff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-box h1,
+  .welcome-box h3
+  
+  {
+    color: #333;
+    margin: 0;
+    padding: 15px;
+  }
+
+  .welcome-box p
+  {
+    color: #333;
+    margin-top: auto;
+  }
+  
+  /* .welcome-box p {
+    color: #555;
+  } */
+  
+  .welcome-image img {
+    width: 200px;
+    margin-left: 145px;
+  }
+  
+  /* Finance Section */
+  .finance-section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .finance-cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .finance-card {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .finance-card h3 {
+    margin: 0;
+    color: #5b4cff;
+  }
+  
+  .finance-card p {
+    color: #555;
+  }
+  
+  /* Enrolled Courses Section */
+  .courses-section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .course-card-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .course-card {
+    flex: 1;
+    background-color: #e8eaff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .view-button {
+    background-color: #5b4cff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .view-button:hover {
+    background-color: #4838c9;
+  }
+  
+  /* Notices Section */
+  .notices-section {
+    margin-top: 20px;
+  }
+  
+  .notices-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .see-all {
+    color: #5b4cff;
+    text-decoration: none;
+  }
+  
+  .notice-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notice-card h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .notice-card p {
+    color: #555;
+  }
+  
+  .notice-card a {
+    color: #5b4cff;
+    text-decoration: none;
+    font-size: 14px;
+  }

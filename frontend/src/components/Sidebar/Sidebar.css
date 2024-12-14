@@ -1,149 +1,79 @@
 /* Sidebar styles */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #f4f5f7;
-  border-right: 1px solid #d1d1d1;
+  width: 180px;
+  background-color: #3d7788;
+  color: white !important;
+  font-weight: 450 !important; 
+  border-right: none; /* Remove border for a cleaner look */
+  border-radius: 15px; /* Remove rounded corners */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  /*overflow: hidden;*/
-  transition: width 0.3s ease;
-  z-index: 1300;
+  padding: 20px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a modern look */
+  box-sizing: border-box; 
+  margin: 0.6rem;
 }
 
-/* Sidebar collapsed and expanded states */
-.sidebar.collapsed {
-  width: 60px;
-}
-
-.sidebar.expanded {
-  width: 180px;
-}
-
-/* Toggle button */
-.toggle-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 64px;
-  border-bottom: 1px solid #d1d1d1;
-  cursor: pointer;
-}
 
 /* Menu list styles */
 .menu {
   list-style: none;
-  padding: 10px;
-  margin: 0;
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
   width: 100%;
 }
 
 .menu-item {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 15px 15px;
-  color: #333;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px; /* Add spacing between menu items */
+  padding: 10px 15px; /* Add padding for larger clickable areas */
+  border-radius: 10px; /* Add rounded corners to menu items */
+}
+.menu-item:last-child {
+  margin-bottom: 0; /* Remove extra margin after the last item */
 }
 
-/* Center align icons when collapsed */
-.sidebar.collapsed .menu-item {
-  justify-content: center;
-  padding: 10px 0;
+.menu-item:hover {
+  background-color: #e0e0e0;
 }
 
 .menu-icon {
-  margin-right: 10px;
-  transition: margin 0.3s ease;
-}
-
-.sidebar.collapsed .menu-icon {
-  margin-right: 0;
+  margin-right: 15px; /* Adjust spacing between icon and label */
+  font-size: 20px; /* Match size to menu label */
 }
 
 .menu-label {
-  white-space: nowrap;
+  font-size: 20px; /* Match size to menu icon */
 }
-
-/* Sub-menu styles (for Submit dropdown) */
-.sub-menu {
-  list-style: none;
-  padding-left: 20px; /* Indentation for sub-menu items */
-  margin: 0;
-  background-color: #eaeaea; /* Sub-menu background */
-  border-radius: 5px;
-  max-height: 0; /* Initially hidden */
-  /*overflow: hidden;*/
-  transition: max-height 0.3s ease-in-out; /* Smooth transition */
-}
-
-.sub-menu-item {
-  padding: 10px 15px;
-  font-size: 14px;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.sub-menu-item:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown when expanded */
-.sidebar .sub-menu {
-  max-height: 300px; /* Adjust the max-height to your preference */
-}
-
-.menu-link {
-  display: flex;
-  align-items: center;
-  cursor: pointer; /* Makes the entire area clickable */
-}
-
-.menu-link:hover {
-  background-color: #f0f0f0; /* Optional: Add a hover effect */
-}
-
-.menu-icon {
-  margin-right: 10px; /* Space between icon and label */
-}
-
-.menu-label {
-  font-size: 14px;
-}
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .sidebar {
-    width: 60px;
-  }
-
-  .sidebar.expanded {
-    width: 200px;
+    width: 90%; /* Adjust width for smaller screens */
+    height: 100%; /* Full height for smaller screens */
+    border-radius: 0; /* Remove rounded corners */
+    margin: 0; /* Align sidebar to the start */
   }
 }
 
 @media (max-width: 576px) {
   .sidebar {
-    position: absolute;
-    z-index: 1500;
-    height: 100vh;
-  }
-
-  .sidebar.collapsed {
-    width: 60px;
-  }
-
-  .sidebar.expanded {
-    width: 200px;
+    width: 100%; /* Adjust width for extra small screens */
+    height: 100%; /* Full height */
+    border-radius: 0; /* Remove rounded corners */
+    margin: 0; /* Align sidebar to the start */
   }
 }
- 
