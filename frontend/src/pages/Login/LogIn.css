@@ -17,16 +17,31 @@ body {
     height: 100vh;
 }
 
-/* Left Section */
+.left-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('C:\Bansi\FYDP\Git\ORIC\frontend\src\pages\Login\Oric Bg Left.jpg'); 
+    background-size: cover;
+    opacity: 0.15; 
+    z-index: 0; 
+}
+
 .left-section {
-    background-color: #0a5b7f;
+    flex: 1; /* Takes up half of the screen */
+    background: linear-gradient(to bottom, #004C70, #0C7A8C); /* Gradient background */
     color: white;
-    flex: 0 0 53%;
     display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     flex-direction: column;
-    justify-content: center;
-    padding: 4rem;
-    min-height: 100vh;
+    text-align: left;
+    padding: 2rem;
+    position: relative;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .left-section h1 {
