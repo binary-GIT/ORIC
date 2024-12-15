@@ -125,7 +125,7 @@ const Form = () => {
         {/* ORIC Form */}
         <form className="oric-main-form" onSubmit={handleSubmit}>
           <div className="oric-form-group">
-            <label>Faculty Member Name *</label>
+            <label>Name of Faculty Member *</label>
             <input
               type="text"
               name="facultyName"
@@ -139,7 +139,7 @@ const Form = () => {
           </div>
 
           <div className="oric-form-group">
-            <label>Department Name *</label>
+            <label>Name of Department *</label>
             <input
               type="text"
               name="departmentName"
@@ -153,7 +153,7 @@ const Form = () => {
           </div>
 
           <div className="oric-form-group">
-            <label>Faculty Email Address *</label>
+            <label>Email address of Faculty *</label>
             <input
               type="email"
               name="facultyEmail"
@@ -167,20 +167,20 @@ const Form = () => {
           </div>
 
           {[
-            { key: 'researchGrantsSubmittedHEC', label: 'HEC Research Grants Submitted' },
-            { key: 'researchGrantsSubmittedNonHEC', label: 'Non-HEC Research Grants Submitted' },
-            { key: 'researchGrantsApprovedHEC', label: 'HEC Research Grants Approved' },
-            { key: 'researchGrantsApprovedNonHEC', label: 'Non-HEC Research Grants Approved' },
-            { key: 'projectsCompletedHEC', label: 'HEC Projects Completed' },
-            { key: 'projectsCompletedNonHEC', label: 'Non-HEC Projects Completed' },
-            { key: 'jointResearchSubmitted', label: 'Joint Research Projects Submitted' },
-            { key: 'jointResearchApproved', label: 'Joint Research Projects Approved' },
-            { key: 'jointResearchCompleted', label: 'Joint Research Projects Completed' },
-            { key: 'policyAdvocacyInitiatives', label: 'Policy Advocacy Initiatives' },
-            { key: 'researchLinkagesDeveloped', label: 'Research Linkages Developed' },
-            { key: 'civicEngagementActivities', label: 'Civic Engagement Activities' },
-            { key: 'consultancyContractsSecured', label: 'Consultancy Contracts Secured' },
-            { key: 'industryLiaisonDeveloped', label: 'Industry Liaison Developed' },
+            { key: 'researchGrantsSubmittedHEC', label: 'Number research grants Submitted to HEC Source *' },
+            { key: 'researchGrantsSubmittedNonHEC', label: 'Number research grants Submitted to Non HEC Source *' },
+            { key: 'researchGrantsApprovedHEC', label: 'Number research grants Approved from HEC Source *' },
+            { key: 'researchGrantsApprovedNonHEC', label: 'Number research grants Approved from Non HEC Source *' },
+            { key: 'projectsCompletedHEC', label: 'Number of HEC funded research projects Completed *' },
+            { key: 'projectsCompletedNonHEC', label: 'Number of Non HEC funded research projects Completed *' },
+            { key: 'jointResearchSubmitted', label: 'Joint Research Project Submitted to National/International Funding Agencies' },
+            { key: 'jointResearchApproved', label: 'Joint Research Project Approved from National/International Funding Agencies' },
+            { key: 'jointResearchCompleted', label: 'Joint Research Project Completed (National/International Funding Agencies)' },
+            { key: 'policyAdvocacyInitiatives', label: 'Number of Policy Advocacy/Case Studies *' },
+            { key: 'researchLinkagesDeveloped', label: 'Number of Research Links established *' },
+            { key: 'civicEngagementActivities', label: 'Number of Civic Engagements *' },
+            { key: 'consultancyContractsSecured', label: 'Number of Consultancy Contracts Executed through ORIC *' },
+            { key: 'industryLiaisonDeveloped', label: 'Number of Liaison Developed with UniversitYS Advance Studies & Research Board (AS&RB)' },
           ].map((field) => (
             <div className="oric-form-group" key={field.key}>
               <label>{field.label}</label>

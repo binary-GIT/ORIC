@@ -22,10 +22,10 @@
 }
 
 .logo {
-  width: 75px;
+  width: 85px;
   height: 50px;
   border-radius: 50%;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   margin-left: 25px;
 }
 
@@ -37,7 +37,7 @@
 .menu-item {
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 10px 15px;
@@ -54,8 +54,8 @@
 }
 
 .menu-icon {
-  font-size: 24px;
-  margin-right: 10px;
+  font-size: 29px;
+  margin-right: 8px;
   transition: margin-right 0.3s ease;
 }
 

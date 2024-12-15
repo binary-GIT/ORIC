@@ -10,12 +10,13 @@ import './Sidebar.css';
 function Sidebar() {
   const navigate = useNavigate();
 
+  // Define menu items with their corresponding paths
   const menuItems = [
-    { icon: <HomeIcon />, label: 'Home' },
-    { icon: <PersonIcon />, label: 'Profile' },
-    { icon: <PostAddIcon />, label: 'Submit' },
+    { icon: <HomeIcon />, label: 'Home', path: '/home' },
+    { icon: <PersonIcon />, label: 'Profile', path: '/home' },
+    { icon: <PostAddIcon />, label: 'Submit', path: '/form1' },
     { icon: <SettingsIcon />, label: 'Settings' },
-    { icon: <ExitToAppIcon />, label: 'Logout' },
+    { icon: <ExitToAppIcon />, label: 'Logout', path: '/' },
   ];
 
   return (
@@ -25,7 +26,11 @@ function Sidebar() {
       </div>
       <ul className="menu">
         {menuItems.map((item, index) => (
-          <li key={index} className="menu-item">
+          <li
+            key={index}
+            className="menu-item"
+            onClick={() => navigate(item.path)} // Navigate to the item's path
+          >
             <div className="menu-icon">{item.icon}</div>
             <span className="menu-label">{item.label}</span>
           </li>

@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 // import Dashboard from './pages/dashboard/dashboard';
 import Home from './pages/home/home';
 import Form from './pages/RIC Forms/Ricform';
+import RICForm2 from './pages/RIC Forms/RICform2';
 
 //import Navbar from './components/Navbar/Navbar';
 // import Navbar from './components/Navbar/Navbar';
@@ -29,6 +30,7 @@ function App() {
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         <Route path="/home" element={<Home />} />
         <Route path='form1' element={<Form />} />
+        <Route path='form2' element={<RICForm2 />} />
 
 
         {/*<Route path="/navbar" element={<Navbar />} /> */}

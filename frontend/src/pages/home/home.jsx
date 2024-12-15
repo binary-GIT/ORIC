@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { MdPersonOutline } from "react-icons/md";
 import "./Home.css";
 
 const Home = () => {
+    const navigate = useNavigate(); // React Router's hook for navigation
+
     return (
         <div className="home-container">
             {/* Sidebar */}
@@ -32,7 +35,11 @@ const Home = () => {
                 <header className="welcome-section">
                     <div className="welcome-text">
                         <h2>Welcome back, USER!</h2>
-                        <p>Welcome to ORIC Data Portal, a platform that ensures streamline the submission and management of your research papers, offering a centralized space to showcase your work and collaborate with peers.</p>
+                        <p>
+                            Welcome to ORIC Data Portal, a platform that ensures streamline the
+                            submission and management of your research papers, offering a
+                            centralized space to showcase your work and collaborate with peers.
+                        </p>
                     </div>
                     <div className="welcome-image">
                         <img
@@ -43,41 +50,38 @@ const Home = () => {
                     </div>
                 </header>
 
-                {/* Finance Section */}
+                {/* Forms Section */}
                 <section className="form-section">
                     <h3>Want To Submit Your Paper?</h3>
                     <div className="form-cards">
-                        <div className="card">
+                        <div
+                            className="card"
+                            onClick={() => navigate("/form1")} // Replace with your desired path
+                            role="button"
+                            tabIndex={0}
+                            onKeyPress={(e) => e.key === 'Enter' && navigate("/form1")}
+                        >
                             <h4>RIC Form # 1</h4>
                             <p>Submission of your Research Paper</p>
                         </div>
-                        <div className="card">
+                        <div
+                            className="card"
+                            onClick={() => navigate("/form2")} // Replace with your desired path
+                            role="button"
+                            tabIndex={0}
+                            onKeyPress={(e) => e.key === 'Enter' && navigate("/form2")}
+                        >
                             <h4>RIC Form # 2</h4>
                             <p>Submission of Your Grant</p>
                         </div>
                         <div className="card">
                             <h4>RIC Form # 3</h4>
-                            <p>Handeled by ORIC Team</p>
+                            <p>Handled by ORIC Team</p>
                         </div>
                     </div>
                 </section>
 
-                {/* Enrolled Courses */}
-                {/* <section className="courses-section">
-                        <h3>Enrolled Courses</h3>
-                        <div className="course-cards">
-                            <div className="course-card">
-                                <h4>Object Oriented Programming</h4>
-                                <button className="view-button">View</button>
-                            </div>
-                            <div className="course-card">
-                                <h4>Fundamentals of Database Systems</h4>
-                                <button className="view-button">View</button>
-                            </div>
-                        </div>
-                    </section> */}
-
-                {/* Course Instructors and Notices */}
+                {/* ORIC Team Section */}
                 <section className="oric-team">
                     <h3>ORIC Team</h3>
                     <div className="team-cards">
@@ -126,8 +130,6 @@ const Home = () => {
                     </div>
                 </section>
 
-
-
                 <div className="oric-vision-aim">
                     <h3>ORIC Vision & Aim</h3>
                     <p>
@@ -140,9 +142,8 @@ const Home = () => {
                         connecting industry with academia and driving positive social impact.
                     </p>
                 </div>
-            
+            </div>
         </div>
-        </div >
     );
 };
 

@@ -7,7 +7,7 @@ function Login() {
 
     const handleLogin = () => {
         // You can add login validation here if needed
-        navigate('/');
+        navigate('/home');
     }
 
     return (
