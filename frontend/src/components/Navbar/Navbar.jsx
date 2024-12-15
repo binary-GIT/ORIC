@@ -1,21 +1,26 @@
-import "../Navbar/Navbar.css"
-import { FaUserCircle } from "react-icons/fa";
-export default function Navbar() {
+import React from "react";
+import "./Navbar.css";
+
+const Navbar = () => {
   return (
-    <>
-      <nav className="navbar">
-        <div className="navbar-left">
-          <img src="/oric.png" alt="not loaded yet" />
-          <h1>Oric Data Portal, NEDUET</h1>
+    <nav className="navbar">
+      {/* Search Bar */}
+      <div className="search-container">
+        <input type="text" placeholder="Search" className="search-input" />
+      </div>
+
+      {/* User Info */}
+      <div className="user-info">
+        <span className="user-icon">👤</span> {/* Placeholder for user icon */}
+        <div className="user-details">
+          <a href="#" className="user-name">
+            Dr. Riaz
+          </a>
+          <span className="user-role">Director ORIC</span>
         </div>
-        <div className="navbar-right">
-          <h1>Hello, Syed Sumam</h1>
-          <h1>
-            <FaUserCircle />
-          </h1>
-        </div>
-      </nav>
-  
-    </>
+      </div>
+    </nav>
   );
-}
+};
+
+export default Navbar;

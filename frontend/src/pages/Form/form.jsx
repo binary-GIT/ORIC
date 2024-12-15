@@ -34,7 +34,6 @@ function GoogleForm() {
       <div className="layout">
         <Sidebar />
         <div className="main-content">
-          <Navbar />
           <div className="instructions">
             <h3>Instructions:</h3>
             <ul>
@@ -44,7 +43,7 @@ function GoogleForm() {
             </ul>
           </div>
           <div className="form-container">
-            <h2>Form Page#1</h2>
+            <h2>RIC Form-1: Research Grants-Industrial Linkage-Policy Advocacy FY: 2024-25 </h2>
             <form>
               <div className="form-row">
                 <div className="form-group">
