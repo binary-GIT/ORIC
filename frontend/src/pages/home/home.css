@@ -1,203 +1,371 @@
-/* Container */
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .home-container {
     display: flex;
-    background-color: #f8f9fc;
     height: 100vh;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    width: 200px;
-    background-color: #3d7788; /* Sidebar color */
-    color: white;
-  }
-  
-  /* Main Content */
-  .main-content {
+    background-color: #f5f7fa;
+    /* Light background */
+}
+
+.main-content {
     flex: 1;
-    justify-content: flex-start;
-    padding: 5px;
-    margin-right: 50px;
-    width: 100%;
-    /* padding-right: 300px; */
-  }
-  
-  /* Header Section */
-  .header {
+    margin-left: 180px;
+    /* Sidebar width */
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+/* Top Bar */
+.top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .search-bar {
-    flex: 1;
-  }
-  
-  .search-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .user-profile {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.search-bar .search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.user-profile {
     display: flex;
     align-items: center;
-    margin-left: 10rem;
-    
-  }
-  
-  .user-details {
-    margin-right: 10px;
-    text-align: right;
-  }
-  
-  .user-name {
-    font-weight: bold;
-    display: block;
-  }
-  
-  .user-year {
-    color: #888;
-  }
-  
-  .profile-image {
+}
+
+.user-profile .icon {
+    font-size: 45px;
+    /* Default size */
+    margin-right: 2px;
+}
+
+.user-avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-  }
-  
-  /* Welcome Section */
-  .welcome-section {
-    display: flex;
-    background-color: #e3e8ff;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .welcome-box h1,
-  .welcome-box h3
-  
-  {
-    color: #333;
-    margin: 0;
-    padding: 15px;
-  }
+    margin-right: 10px;
+}
 
-  .welcome-box p
-  {
-    color: #333;
-    margin-top: auto;
-  }
-  
-  /* .welcome-box p {
-    color: #555;
-  } */
-  
-  .welcome-image img {
-    width: 200px;
-    margin-left: 145px;
-  }
-  
-  /* Finance Section */
-  .finance-section h2 {
-    margin-bottom: 10px;
-  }
-  
-  .finance-cards {
+.user-info {
     display: flex;
-    gap: 20px;
-  }
-  
-  .finance-card {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .finance-card h3 {
-    margin: 0;
-    color: #5b4cff;
-  }
-  
-  .finance-card p {
-    color: #555;
-  }
-  
-  /* Enrolled Courses Section */
-  .courses-section h2 {
-    margin-bottom: 10px;
-  }
-  
-  .course-card-container {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .course-card {
-    flex: 1;
-    background-color: #e8eaff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .view-button {
-    background-color: #5b4cff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  .view-button:hover {
-    background-color: #4838c9;
-  }
-  
-  /* Notices Section */
-  .notices-section {
-    margin-top: 20px;
-  }
-  
-  .notices-header {
+    flex-direction: column;
+    /* Stack spans vertically */
+}
+
+.user-info .user-name {
+    font-weight: bold;
+    color: #3d7788;
+    margin-bottom: 2px;
+    /* Small gap between name and role */
+}
+
+.user-info .user-role {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Welcome Section */
+.welcome-section {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-  }
-  
-  .see-all {
-    color: #5b4cff;
-    text-decoration: none;
-  }
-  
-  .notice-card {
-    background-color: #fff;
+    background-color: #3d7788;
+    color: #ffffff;
+    min-height: 230px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.welcome-text h2 {
+    font-size: 2.5rem;
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.welcome-text p {
+    font-size: 1rem;
+    max-width: 64%;
+    padding-top: 10px;
+    margin-left: 15px;
+}
+
+.welcome-image img {
+    width: 280px;
+    height: auto;
+    margin-right: 25px;
+}
+
+/* Forms Section */
+.form-section h3 {
+    margin: 20px 0 10px;
+    font-size: 1.5rem;
+    color: #3d7788;
+}
+
+.form-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    /* Add gap between cards */
+}
+
+.card {
+    background-color: #e0f2f1;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card:last-child {
+    margin-right: 0;
+}
+
+.card h4 {
+    color: #3d7788;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-cards {
+        flex-direction: column;
+        /* Stack cards vertically */
+        align-items: center;
+        /* Center cards on small screens */
+    }
+
+    .card {
+        margin-bottom: 20px;
+        /* Add space between stacked cards */
+        width: 100%;
+        /* Ensure cards take full width */
+    }
+
+    .card:last-child {
+        margin-bottom: 0;
+        /* Remove margin for the last card */
+    }
+}
+
+
+/* ORIC Team Section */
+.oric-team h3 {
+    margin: 20px 0 10px;
+    font-size: 1.5rem;
+    color: #3d7788;
+    text-align: left; /* Align the header to the left */
+}
+
+.team-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Add gap between cards */
+}
+
+.card {
+    background-color: #e0f2f1;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 30%; /* Make the card flexible, with a base width of 30% */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 200px; /* Set a minimum width for smaller screens */
+}
+
+.card h4 {
+    color: #3d7788;
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Spacing between title and description */
+}
+
+.card p {
+    color: #777;
+    font-size: 1rem;
+}
+
+/* Profile Avatar */
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    overflow: hidden; /* Ensure that the image is perfectly round */
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area of the circle */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards */
+    }
+
+    .card {
+        margin-bottom: 20px; /* Add space between stacked cards */
+        width: 100%; /* Make cards take full width */
+    }
+
+    .card:last-child {
+        margin-bottom: 0; /* Remove margin from the last card */
+    }
+}
+
+
+
+/* ORIC Vision & Aim Section */
+.oric-vision-aim {
+    background-color: #f4f7f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.oric-vision-aim h3 {
+    font-size: 1.5rem;
+    color: #3d7788;
+    margin-bottom: 10px;
+}
+
+.oric-vision-aim p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-cards {
+        grid-template-columns: 1fr;
+        /* One column on smaller screens */
+    }
+
+    .oric-vision-aim p {
+        font-size: 0.9rem;
+        /* Smaller font size on small screens */
+    }
+}
+
+
+/* Course Instructors and Notices */
+.instructors-notice {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.instructors,
+.daily-notice {
+    flex: 1;
+    background-color: #fafafa;
     padding: 15px;
     border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-images {
+    display: flex;
+    gap: 10px;
+}
+
+.instructor-images img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.notice-content .notice {
     margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .notice-card h3 {
-    margin: 0;
-    color: #333;
-  }
-  
-  .notice-card p {
+}
+
+.notice p {
+    font-size: 0.9rem;
     color: #555;
-  }
-  
-  .notice-card a {
-    color: #5b4cff;
-    text-decoration: none;
-    font-size: 14px;
-  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.8rem;
+        /* Reduce text size */
+        margin-top: 20px;
+        /* Adjust top margin */
+    }
+
+    .welcome-text p {
+        font-size: 0.9rem;
+        /* Reduce paragraph text size */
+        max-width: 80%;
+        /* Allow the paragraph to take more width */
+        margin-left: 0;
+        /* Remove left margin */
+    }
+
+    /* Hide image on smaller screens */
+    .welcome-image img {
+        display: none;
+        /* Hide the image */
+    }
+
+    .finance-cards,
+    .course-cards,
+    .instructors-notice {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card,
+    .course-card {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        margin-left: 0;
+        /* Remove sidebar spacing */
+    }
+
+    .welcome-text h2 {
+        font-size: 1.5rem;
+        /* Further reduce font size for smaller screens */
+    }
+
+    .welcome-text p {
+        font-size: 0.85rem;
+        /* Reduce text size even more */
+    }
+
+    /* Hide image on smaller screens */
+    .welcome-image img {
+        display: none;
+        /* Hide the image */
+    }
+}

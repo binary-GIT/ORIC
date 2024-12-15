@@ -1,79 +1,126 @@
-/* Sidebar styles */
-*{
+/* Sidebar.css */
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 180px;
+  height: 100vh;
+  width: 180px; /* Fixed sidebar width */
   background-color: #3d7788;
-  color: white !important;
-  font-weight: 450 !important; 
-  border-right: none; /* Remove border for a cleaner look */
-  border-radius: 15px; /* Remove rounded corners */
+  color: white;
   display: flex;
   flex-direction: column;
-  padding: 20px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a modern look */
-  box-sizing: border-box; 
-  margin: 0.6rem;
+  padding: 20px;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  z-index: 1; /* Ensure the sidebar is above other elements */
 }
 
+/* Hide sidebar toggle button on large screens */
+@media (min-width: 768px) {
+  .sidebar {
+    width: 180px;
+  }
 
-/* Menu list styles */
+  .sidebar.open {
+    width: 180px;
+  }
+
+  .toggle-button {
+    display: none; /* Hide toggle button on larger screens */
+  }
+}
+
+.logo {
+  width: 75px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+  margin-left: 25px;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .sidebar.open {
+    width: 180px; 
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu {
+    display: none; 
+  }
+
+  .sidebar.open .menu {
+    display: block; 
+  }
+
+  /* Style for toggle button */
+  .toggle-button {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #3d7788; /* Sidebar color */
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 2; /* Ensure the toggle button is on top */
+  }
+}
+
 .menu {
   list-style: none;
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
   width: 100%;
+  padding: 0;
 }
 
 .menu-item {
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-bottom: 15px; /* Add spacing between menu items */
-  padding: 10px 15px; /* Add padding for larger clickable areas */
-  border-radius: 10px; /* Add rounded corners to menu items */
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
+
 .menu-item:last-child {
-  margin-bottom: 0; /* Remove extra margin after the last item */
+  margin-bottom: 0;
 }
 
 .menu-item:hover {
-  background-color: #e0e0e0;
+  background-color: #2c5b66;
 }
 
 .menu-icon {
-  margin-right: 15px; /* Adjust spacing between icon and label */
-  font-size: 20px; /* Match size to menu label */
+  margin-right: 10px;
 }
 
 .menu-label {
-  font-size: 20px; /* Match size to menu icon */
+  font-size: 16px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 90%; /* Adjust width for smaller screens */
-    height: 100%; /* Full height for smaller screens */
-    border-radius: 0; /* Remove rounded corners */
-    margin: 0; /* Align sidebar to the start */
-  }
-}
-
-@media (max-width: 576px) {
-  .sidebar {
-    width: 100%; /* Adjust width for extra small screens */
-    height: 100%; /* Full height */
-    border-radius: 0; /* Remove rounded corners */
-    margin: 0; /* Align sidebar to the start */
-  }
+/* Style for profile image */
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }

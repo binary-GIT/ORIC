@@ -1,118 +1,149 @@
 import React from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import "./home.css";
+import { MdPersonOutline } from "react-icons/md";
+import "./Home.css";
 
 const Home = () => {
-  const today = new Date();
-  const formattedDate = today.toLocaleDateString("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+    return (
+        <div className="home-container">
+            {/* Sidebar */}
+            <Sidebar />
 
-  return (
-    <div className="home-container">
-      {/* Sidebar */}
-      <div className="sidebar">
-        <Sidebar />
-      </div>
+            {/* Main Content */}
+            <div className="main-content">
+                {/* Top Navigation Section */}
+                <div className="top-bar">
+                    <div className="search-bar">
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            className="search-input"
+                        />
+                    </div>
+                    <div className="user-profile">
+                        <MdPersonOutline className="icon" />
+                        <div className="user-info">
+                            <span className="user-name">Dr.Riaz</span>
+                            <span className="user-role">Director ORIC</span>
+                        </div>
+                    </div>
+                </div>
+                {/* Welcome Section */}
+                <header className="welcome-section">
+                    <div className="welcome-text">
+                        <h2>Welcome back, USER!</h2>
+                        <p>Welcome to ORIC Data Portal, a platform that ensures streamline the submission and management of your research papers, offering a centralized space to showcase your work and collaborate with peers.</p>
+                    </div>
+                    <div className="welcome-image">
+                        <img
+                            src="welcome-pic.jpeg"
+                            alt="Welcome Graphic"
+                            className="welcome-graphic"
+                        />
+                    </div>
+                </header>
 
-      {/* Main Content */}
-      <div className="main-content">
-        {/* Header Section */}
-        <header className="header">
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search"
-              className="search-input"
-            />
-          </div>
-          <div className="user-profile">
-            <div className="user-details">
-              <span className="user-name">John Doe</span>
-              <span className="user-year">3rd year</span>
-            </div>
-            <img
-              src="https://via.placeholder.com/50"
-              alt="Profile"
-              className="profile-image"
-            />
-          </div>
-        </header>
+                {/* Finance Section */}
+                <section className="form-section">
+                    <h3>Want To Submit Your Paper?</h3>
+                    <div className="form-cards">
+                        <div className="card">
+                            <h4>RIC Form # 1</h4>
+                            <p>Submission of your Research Paper</p>
+                        </div>
+                        <div className="card">
+                            <h4>RIC Form # 2</h4>
+                            <p>Submission of Your Grant</p>
+                        </div>
+                        <div className="card">
+                            <h4>RIC Form # 3</h4>
+                            <p>Handeled by ORIC Team</p>
+                        </div>
+                    </div>
+                </section>
 
-        {/* Welcome Section */}
-        <section className="welcome-section">
-          <div className="welcome-box">
-            <h3>{formattedDate}</h3>
-            <h1>Welcome back, USER!</h1>
-            <p>Always stay updated in your student portal</p>
-          </div>
-          <div className="welcome-image">
-            <img
-              src="https://via.placeholder.com/200"
-              alt="Welcome"
-            />
-          </div>
-        </section>
+                {/* Enrolled Courses */}
+                {/* <section className="courses-section">
+                        <h3>Enrolled Courses</h3>
+                        <div className="course-cards">
+                            <div className="course-card">
+                                <h4>Object Oriented Programming</h4>
+                                <button className="view-button">View</button>
+                            </div>
+                            <div className="course-card">
+                                <h4>Fundamentals of Database Systems</h4>
+                                <button className="view-button">View</button>
+                            </div>
+                        </div>
+                    </section> */}
 
-        {/* Finance Section */}
-        <section className="finance-section">
-          <h2>Finance</h2>
-          <div className="finance-cards">
-            <div className="finance-card">
-              <h3>$10,000</h3>
-              <p>Total Payable</p>
-            </div>
-            <div className="finance-card">
-              <h3>$5,000</h3>
-              <p>Total Paid</p>
-            </div>
-            <div className="finance-card">
-              <h3>$300</h3>
-              <p>Others</p>
-            </div>
-          </div>
-        </section>
+                {/* Course Instructors and Notices */}
+                <section className="oric-team">
+                    <h3>ORIC Team</h3>
+                    <div className="team-cards">
+                        <div className="card">
+                            <div className="profile-avatar">
+                                <img src="profile.jpeg" alt="Dr. Riaz Uddin" />
+                            </div>
+                            <h4>Dr. Riaz Uddin</h4>
+                            <p>Director ORIC</p>
+                        </div>
+                        <div className="card">
+                            <div className="profile-avatar">
+                                <img src="profile.jpeg" alt="Dr. Saeeda Nadir Ali" />
+                            </div>
+                            <h4>Dr. Saeeda Nadir Ali</h4>
+                            <p>Manager - Tech. Transfer and Univ. Industrial Linkage</p>
+                        </div>
+                        <div className="card">
+                            <div className="profile-avatar">
+                                <img src="profile.jpeg" alt="Dr. Muhammad Uzair" />
+                            </div>
+                            <h4>Dr. Muhammad Uzair</h4>
+                            <p>Manager - Research Operation and Development</p>
+                        </div>
+                        <div className="card">
+                            <div className="profile-avatar">
+                                <img src="profile.jpeg" alt="Dr. Sundus Ali" />
+                            </div>
+                            <h4>Dr. Sundus Ali</h4>
+                            <p>Manager - Business Incubation</p>
+                        </div>
+                        <div className="card">
+                            <div className="profile-avatar">
+                                <img src="profile.jpeg" alt="Dr. Ashar Ahmed" />
+                            </div>
+                            <h4>Dr. Ashar Ahmed</h4>
+                            <p>Manager - Intellectual Property</p>
+                        </div>
+                        <div className="card">
+                            <div className="profile-avatar">
+                                <img src="profile.jpeg" alt="Mr. Imran Ahmed" />
+                            </div>
+                            <h4>Mr. Imran Ahmed</h4>
+                            <p>Asst. Manager ORIC</p>
+                        </div>
+                    </div>
+                </section>
 
-        {/* Enrolled Courses */}
-        <section className="courses-section">
-          <h2>Enrolled Courses</h2>
-          <div className="course-card-container">
-            <div className="course-card">
-              <h3>Object Oriented Programming</h3>
-              <button className="view-button">View</button>
-            </div>
-            <div className="course-card">
-              <h3>Fundamentals of Database Systems</h3>
-              <button className="view-button">View</button>
-            </div>
-          </div>
-        </section>
 
-        {/* Notices Section */}
-        <section className="notices-section">
-          <div className="notices-header">
-            <h2>Daily Notice</h2>
-            <a href="#see-all" className="see-all">
-              See all
-            </a>
-          </div>
-          <div className="notice-card">
-            <h3>Prelim Payment Due</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="#more">See more</a>
-          </div>
-          <div className="notice-card">
-            <h3>Exam Schedule</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="#more">See more</a>
-          </div>
-        </section>
-      </div>
-    </div>
-  );
+
+                <div className="oric-vision-aim">
+                    <h3>ORIC Vision & Aim</h3>
+                    <p>
+                        ORIC aims to foster innovation, promote research and development, and
+                        contribute to creating a vibrant, entrepreneurial ecosystem within the
+                        community.
+                    </p>
+                    <p>
+                        Our vision is to create a culture of innovation and entrepreneurship by
+                        connecting industry with academia and driving positive social impact.
+                    </p>
+                </div>
+            
+        </div>
+        </div >
+    );
 };
 
 export default Home;
