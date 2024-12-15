@@ -36,7 +36,7 @@ const Home = () => {
                     </div>
                     <div className="welcome-image">
                         <img
-                            src="welcome-pic.jpeg"
+                            src="welcome-section.png"
                             alt="Welcome Graphic"
                             className="welcome-graphic"
                         />

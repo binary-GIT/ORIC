@@ -7,6 +7,7 @@ import Login from './pages/Login/Login'
 // import Form3 from './pages/Form/form3';
 // import Dashboard from './pages/dashboard/dashboard';
 import Home from './pages/home/home';
+import Form from './pages/RIC Forms/Ricform';
 
 //import Navbar from './components/Navbar/Navbar';
 // import Navbar from './components/Navbar/Navbar';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/form3" element={<Form3 />} /> */}
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         <Route path="/home" element={<Home />} />
+        <Route path='form1' element={<Form />} />
 
 
         {/*<Route path="/navbar" element={<Navbar />} /> */}
