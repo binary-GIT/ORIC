@@ -10,31 +10,15 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 180px; /* Fixed sidebar width */
+  width: 180px; /* Default width */
   background-color: #3d7788;
   color: white;
   display: flex;
   flex-direction: column;
   padding: 20px;
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  transition: all 0.3s ease;
+  transition: width 0.3s ease;
   z-index: 1; /* Ensure the sidebar is above other elements */
-}
-
-/* Hide sidebar toggle button on large screens */
-@media (min-width: 768px) {
-  .sidebar {
-    width: 180px;
-  }
-
-  .sidebar.open {
-    width: 180px;
-  }
-
-  .toggle-button {
-    display: none; /* Hide toggle button on larger screens */
-  }
 }
 
 .logo {
@@ -45,48 +29,8 @@
   margin-left: 25px;
 }
 
-/* Mobile view */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 0;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .sidebar.open {
-    width: 180px; 
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .menu {
-    display: none; 
-  }
-
-  .sidebar.open .menu {
-    display: block; 
-  }
-
-  /* Style for toggle button */
-  .toggle-button {
-    display: block;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #3d7788; /* Sidebar color */
-    border: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    z-index: 2; /* Ensure the toggle button is on top */
-  }
-}
-
 .menu {
   list-style: none;
-  width: 100%;
   padding: 0;
 }
 
@@ -110,17 +54,40 @@
 }
 
 .menu-icon {
+  font-size: 24px;
   margin-right: 10px;
+  transition: margin-right 0.3s ease;
 }
 
 .menu-label {
   font-size: 16px;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
 }
 
-/* Style for profile image */
-.profile-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-bottom: 20px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px; /* Compact sidebar width */
+    padding: 10px; /* Reduced padding */
+  }
+
+  .menu-icon {
+    margin-right: 0; /* Remove spacing between icon and label */
+  }
+
+  .menu-label {
+    display: none; /* Hide menu labels */
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 20px auto; /* Center the logo */
+  }
+
+  .menu-item {
+    justify-content: center; /* Center items horizontally */
+    padding: 10px;
+  }
 }

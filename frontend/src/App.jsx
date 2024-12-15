@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login/Login'
-import Form from './pages/Form/form'
-import Form2 from './pages/Form/form2';
-import Form3 from './pages/Form/form3';
-import Dashboard from './pages/dashboard/dashboard';
+// import Form from './pages/Form/form'
+// import Form2 from './pages/Form/form2';
+// import Form3 from './pages/Form/form3';
+// import Dashboard from './pages/dashboard/dashboard';
 import Home from './pages/home/home';
 
 //import Navbar from './components/Navbar/Navbar';
@@ -25,7 +25,7 @@ function App() {
         {/* <Route path="/form" element={<Form />} />
         <Route path="/form2" element={<Form2 />} />
         <Route path="/form3" element={<Form3 />} /> */}
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         <Route path="/home" element={<Home />} />
 
 
