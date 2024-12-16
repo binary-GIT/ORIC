@@ -15,7 +15,7 @@ function Sidebar() {
   const menuItems = [
     { icon: <HomeIcon />, label: 'Home', path: '/home' },
     { icon: <PersonIcon />, label: 'Profile', path: '/home' },
-    { icon: <PostAddIcon />, label: 'Submit', path: '/form1' },
+    { icon: <PostAddIcon />, label: 'Submissions', path: '/form1' },
     { icon: <HiOutlineArrowsExpand />, label: 'About US', path: '/aboutus' },
     { icon: <ExitToAppIcon />, label: 'Logout', path: '/' },
   ];
