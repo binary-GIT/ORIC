@@ -7,6 +7,7 @@
 
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #f5f5f5;
 }
 
 /* Contact Us Section */
@@ -14,9 +15,9 @@ body {
     padding: 10px;
     text-align: center;
     min-height: 100vh;
-    margin-right: 50px;
 }
 
+/* Contact Title */
 .contact-title {
     font-size: 28px;
     color: #2b4a5b;
@@ -24,22 +25,26 @@ body {
 }
 
 .contact-description {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     color: #555;
+    font-size: 16px;
 }
 
+/* Main Contact Section */
 .contact-form-section {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-right: 0; /* Remove fixed margin */
 }
 
 /* Contact Information */
 .contact-info {
     flex: 1;
     min-width: 250px;
+    padding: 15px;
     margin-left: 200px;
 }
 
@@ -64,7 +69,7 @@ body {
     max-width: 500px;
     background-color: white;
     padding: 20px;
-    margin-right: 100px;
+    margin-right: 135px; /* Center on smaller screens */
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -110,15 +115,55 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .contact-form-section {
         flex-direction: column;
         align-items: center;
     }
 
-    .contact-form,
-    .contact-info {
-        width: 100%;
-        max-width: 500px;
+    .contact-info,
+    .contact-form {
+        margin: 0 auto; /* Center-align both sections */
+        width: 90%; /* Adjust to fit smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 10px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%; /* Full width on small devices */
+        padding: 15px;
+    }
+
+    .contact-title {
+        font-size: 24px;
+    }
+
+    .contact-description {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-btn {
+        width: 100%; /* Button spans full width */
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 20px;
+    }
+
+    .contact-description {
+        font-size: 13px;
     }
 }
