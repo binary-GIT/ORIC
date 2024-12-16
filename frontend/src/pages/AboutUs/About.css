@@ -11,29 +11,67 @@
     background-color: #f5f7fa;
 }
 
-
+.sidebar {
+    width: 180px;
+    background-color: #315b6b; /* Sidebar background */
+    min-height: 100vh;
+    color: white;
+}
 
 .about-oric-container {
     flex: 1;
-    margin-left: 180px;
-    /* Sidebar width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     padding: 20px;
     background-color: #ffffff;
+    min-height: 100vh; /* Stretch full page */
     overflow-y: auto;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 0; /* Remove unnecessary borders */
+}
 
-  }
-  
-  .about-oric-title {
-    font-size: 1.5rem;
+.about-oric-title {
+    font-size: 2rem;
     font-weight: bold;
-    color: #315b6b; /* Darker text color for title */
-    margin-bottom: 10px;
-  }
-  
-  .about-oric-text {
+    color: #315b6b; /* Title color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-oric-text {
     font-size: 1rem;
-    color: #333; /* Dark text color for paragraph */
-    line-height: 1.5; /* Improved line spacing */
-    margin: 0;
-  }
+    color: #333; /* Dark text color */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.list-item {
+    background-color: #e0f7fa; /* Light blue for list items */
+    color: #00796b;
+    padding: 10px 15px;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list-item:hover {
+    background-color: #b2ebf2; /* Slight hover effect */
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}

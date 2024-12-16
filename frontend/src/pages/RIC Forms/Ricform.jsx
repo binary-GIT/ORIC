@@ -95,7 +95,10 @@ const Form = () => {
 
   return (
     <div className="oric-page-container">
-      <Sidebar />
+      <div className="sidebar">
+       <Sidebar />
+      </div>
+      {/* <Sidebar /> */}
       <div className="oric-form-container">
         {/* Top Navigation Section */}
         <div className="oric-top-bar">
