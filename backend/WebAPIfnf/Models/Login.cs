@@ -1,9 +1,13 @@
-﻿// Models/User.cs
+﻿// Models/login.cs
+using System.ComponentModel.DataAnnotations;
+
 namespace WebApi.Models
 {
-    public class User
+    public class Login
     {
-        public int id { get; set; }
+        [Key]
+        public int dataoric_id { get; set; }
+
         public required string email { get; set; }
         public required string name { get; set; }
         public required string password { get; set; }
