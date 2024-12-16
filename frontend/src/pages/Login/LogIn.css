@@ -176,6 +176,25 @@ body {
     background-color: #08485e;
 }
 
+/* Add this to your CSS file */
+.toast-success {
+    background-color: #4caf50 !important; /* Green background */
+    color: white;
+    border-radius: 8px;
+}
+
+.toast-error {
+    background-color: #f44336 !important; /* Red background */
+    color: white;
+    border-radius: 8px;
+}
+
+/* Customize position of the toast */
+.Toastify__toast-container {
+    top: 30px !important;  /* Change the default top position */
+    left: 50% !important;
+    transform: translateX(-50%);
+}
 
 
 /* Responsive Adjustments */

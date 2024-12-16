@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.about-page {
+    display: flex;
+    height: 100vh;
+    background-color: #f5f7fa;
+}
+
+
+
+.about-oric-container {
+    flex: 1;
+    margin-left: 180px;
+    /* Sidebar width */
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    border-radius: 10px; /* Rounded corners */
+
+  }
+  
+  .about-oric-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #315b6b; /* Darker text color for title */
+    margin-bottom: 10px;
+  }
+  
+  .about-oric-text {
+    font-size: 1rem;
+    color: #333; /* Dark text color for paragraph */
+    line-height: 1.5; /* Improved line spacing */
+    margin: 0;
+  }
