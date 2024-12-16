@@ -1,0 +1,121 @@
+/* Page Container */
+.ric2-page-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f8f9fb;
+  }
+  
+  .ric2-form-container {
+    margin-left: 180px;
+    padding: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    min-height: fit-content;
+  }
+  
+  /* Top Bar */
+  .ric2-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .oric2-search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+  }
+  
+  .ric2-user-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ric2-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+    color: #3d7788;
+  }
+  
+  .ric2-user-info .ric2-user-name {
+    display: flex;
+    font-weight: bold;
+    color: #3d7788;
+  }
+  
+  .ric2-user-info .ric2-user-role {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Form Instructions */
+  .ric2-form-instructions {
+    background-color: #e6f3f7;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .ric2-form-instructions h3 {
+    color: #3d7788;
+    margin-bottom: 10px;
+  }
+
+  .ric2-form-instructions p {
+    color: #555;
+  }
+  
+  /* Form Styles */
+  .ric2-main-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .ric2-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ric2-form-group label {
+    font-weight: bold;
+    color: #3d7788;
+    margin-bottom: 5px;
+  }
+  
+  .ric2-form-group input,
+  .ric2-form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .ric2-error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .ric2-submit-btn {
+    align-self: flex-start;
+    background-color: #3d7788;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .ric2-submit-btn:hover {
+    background-color: #2c5b66;
+  }
+  

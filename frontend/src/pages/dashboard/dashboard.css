@@ -3,93 +3,43 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+/* 
 /******************************* Sidebar styling ************************************/
-.sidebar {
-    margin-top: 80px;
-    background-color: #3d7788;
-    color: white !important;
-    /* Set the font color to white */
-    font-weight: 600 !important;
-    /* Make the font heavier */
-}
-
-.menu-item {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-
-.menu-link {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit !important;
-    /* Ensure inheritance from .sidebar */
-    font-weight: inherit !important;
-    /* Ensure font weight is inherited */
-}
-
-.menu-link:hover {
-    background-color: #32616e;
-    /* Add a hover effect for better UI */
-    border-radius: 4px;
-    /* Optional styling */
-}
-
-.menu-icon {
-    margin-right: 10px;
-}
-
-.sidebar .menu-icon {
-    color: white !important;
-    /* Force icon color to white */
-}
-
-/* Change text color and font weight */
-.sidebar .menu-label {
-    color: white !important;
-    /* Set text color to white */
-    font-weight: bold !important;
-    /* Make the text heavier */
-}
-
-/* Ensure menu-link doesn't override text color */
-.sidebar .menu-link {
-    color: inherit;
-    /* Inherit color from parent (sidebar or menu-label) */
-    text-decoration: none;
-    /* Remove underline or link styles */
-}
 
 /* <*********************************************************************************************************************************> */
 .hero-heading {
-    background-color: #32616e;
-    width: fit-content;
+    background-color: #457684;
+    
+    width: 75%;
     display: flex;
-    margin: 0 auto;
-    margin-top: 2rem;
-    padding: 20px;
-    gap: 25rem;
+    /* margin: 10px auto; */
+    margin: auto;
+    margin-right: 120px;
+    margin-top: 1rem;
+    /* padding: 20px; */
     align-items: center;
+    gap: 48rem;
+    height: 100%;
+
 }
 .hero-heading-left 
 {
     color: white;
+    padding: 20px;
+    display: box;
 }
 .icon
 {
     font-size: xx-large;
+    padding: 10px;
 }
 .hero-section
 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
-    margin-top: 2rem;
-    margin-left: 8rem;
+    margin-top: 2.5rem;
+    margin-left: 17rem;
 }
 .hero-section-left h1
 {
@@ -101,8 +51,16 @@
 .hero-section-left-f1
 {
     display: flex;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 50px;
+    border: 1px solid black;
+}
+.hero-section-left-f2
+{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border: 1px solid black;
 }
 .hero-section-2
 {
@@ -113,9 +71,10 @@
     padding: 30px;
     background-color: #32616e;
     color: white;
+    border: 1px solid black;
 }
 .hero-section-2 button
 {
     background-color: #3d7788;
-    padding: 30px 70px;
+    padding: 15px 65px;
 }
