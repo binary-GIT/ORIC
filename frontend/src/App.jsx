@@ -2,24 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login/Login'
-// import Form from './pages/Form/form'
-// import Form2 from './pages/Form/form2';
-// import Form3 from './pages/Form/form3';
-// import Dashboard from './pages/dashboard/dashboard';
 import Home from './pages/home/home';
 import Form from './pages/RIC Forms/Ricform';
 import RICForm2 from './pages/RIC Forms/RICform2';
 import About from './pages/AboutUs/About';
 import Contact from './pages/Contact/Contact';
-
-//import Navbar from './components/Navbar/Navbar';
-// import Navbar from './components/Navbar/Navbar';
-// import FirstForm from './components/Forms/FirstForm';
-// import SecondForm from './components/Forms/SecondForm';
-// import ThirdForm from './components/Forms/ThirdForm';
-
-
-
 
 function App() {
   return (
@@ -35,15 +22,6 @@ function App() {
         <Route path='form2' element={<RICForm2 />} />
         <Route path='aboutus' element={<About />} />
         <Route path='contact' element={<Contact />} />
-
-
-        {/*<Route path="/navbar" element={<Navbar />} /> */}
-        {/* <Route path="/home" element={<FirstForm/>} /> */}
-        {/* <Route path='/form' element={<FirstForm />} /> */}
-        {/* <Route path='/form2' element={<SecondForm />} /> */}
-        {/* <Route path='/form3' element={<ThirdForm />} /> */}
-
-
 
       </Routes>
     </Router>
