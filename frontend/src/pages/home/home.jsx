@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { MdPersonOutline } from "react-icons/md";
-import "./Home.css";
+import "./home.css";
 
 const Home = () => {
     const navigate = useNavigate(); // React Router's hook for navigation
