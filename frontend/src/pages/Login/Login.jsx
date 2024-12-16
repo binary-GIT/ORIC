@@ -16,7 +16,7 @@ function Login() {
             //     autoClose: 3000,
             // });
             // return;
-            alert("Invalid Credentials")
+            alert("Please enter both fields")
         }
     
         try {
@@ -88,7 +88,7 @@ function Login() {
                         <input
                             type="text"
                             required
-                            placeholder="Email or phone number"
+                            placeholder="Enter email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
@@ -97,7 +97,7 @@ function Login() {
                         <label>Password</label>
                         <input
                             type="password"
-                            required
+                            req
                             placeholder="Enter password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}

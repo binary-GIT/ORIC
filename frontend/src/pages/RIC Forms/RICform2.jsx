@@ -40,7 +40,7 @@ const RICForm2 = () => {
   };
 
   const renderSelectOptions = () => {
-    const options = ['NIL', ...Array.from({ length: 10 }, (_, i) => i + 1)];
+    const options = ['0', ...Array.from({ length: 10 }, (_, i) => i + 1)];
     return options.map((option) => (
       <option key={option} value={option}>
         {option}
