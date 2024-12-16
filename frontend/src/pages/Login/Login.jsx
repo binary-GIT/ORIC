@@ -11,11 +11,12 @@ function Login() {
     
     const handleLogin = async () => {
         if (!email || !password) {
-            toast.error('Please fill both fields!', {
-                position: toast.POSITION.TOP_CENTER,
-                autoClose: 3000,
-            });
-            return;
+            // toast.error('Please fill both fields!', {
+            //     position: toast.POSITION.TOP_CENTER,
+            //     autoClose: 3000,
+            // });
+            // return;
+            alert("Invalid Credentials")
         }
     
         try {
@@ -33,6 +34,7 @@ function Login() {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Login successful:', data);
+                navigate('/home');
                 
                 // Assuming the token is in 'data.token' (check API response for actual key name)
                 if (data.token) {
@@ -54,12 +56,11 @@ function Login() {
                         autoClose: 3000,
                     });
                 }
+                
             } else {
-                const error = await response.text();
-                toast.error(`Login failed: ${error}`, {
-                    position: toast.POSITION.TOP_CENTER,
-                    autoClose: 3000,
-                });
+            //    c onst error = await response.text();
+                // If response is not ok, show alert for invalid credentials
+                alert('Invalid Credentials ');
             }
         } catch (error) {
             console.error('Error during login:', error);
