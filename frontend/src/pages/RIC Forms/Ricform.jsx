@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import { MdPersonOutline } from 'react-icons/md';
-import './RicForm.css';
+import './Ricform.css';
 
 const Form = () => {
   const [formData, setFormData] = useState({
