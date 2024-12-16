@@ -23,13 +23,11 @@ const RICForm2 = () => {
     researchPublications: '',
   });
 
-  const [errors, setErrors] = useState({}); // Validation errors
-  const [isErrorVisible, setIsErrorVisible] = useState(false); // Show error
+  const [errors, setErrors] = useState({});
+  const [isErrorVisible, setIsErrorVisible] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
-    // Basic validation for alphabets only
     if (name === 'facultyName' || name === 'departmentName') {
       const alphabetRegex = /^[A-Za-z\s]*$/;
       if (!alphabetRegex.test(value)) {
@@ -37,7 +35,6 @@ const RICForm2 = () => {
         return;
       }
     }
-
     setErrors({ ...errors, [name]: '' });
     setFormData({ ...formData, [name]: value });
   };
@@ -53,7 +50,7 @@ const RICForm2 = () => {
 
   const isEmailValid = (email) => email.includes('@');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newErrors = {};
@@ -72,16 +69,75 @@ const RICForm2 = () => {
       return;
     }
 
-    console.log('Form Submitted:', formData);
-    alert('Form submitted successfully!');
+    // Prepare the data to be sent in the API request
+    const formDto = {
+      faculty_name: formData.facultyName,
+      department_name: formData.departmentName,
+      faculty_email: formData.facultyEmail,
+      ip_disclosures_made: formData.ipDisclosures,
+      patents_filed: formData.patentsFiled,
+      patents_granted: formData.patentsGranted,
+      ip_licensing_negotiations_initiated: formData.licensingInitiations,
+      licenses_signed: formData.licensesSigned,
+      products_prototypes_developed: formData.productsDeveloped,
+      products_prototypes_displayed: formData.productsDisplayed,
+      industry_visits: formData.visitsByIndustry,
+      agreements_signed: formData.agreementsSigned,
+      honors_awards_won: formData.awardsWon,
+      oric_trainings_arranged: formData.trainingsArrangedByORIC,
+      external_trainings_arranged: formData.trainingsArrangedByOthers,
+      research_publications: formData.researchPublications,
+    };
+
+    // Send data to the API using fetch
+    try {
+      const response = await fetch('http://localhost:5066/api/RicForm2/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${sessionStorage.getItem('token')}`, // JWT token from sessionStorage
+        },
+        body: JSON.stringify(formDto),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Form data submitted:', result);
+        alert('Form submitted successfully!');
+      } else {
+        const errorData = await response.text();
+        console.error('Error submitting form:', errorData);
+        alert('Error occurred while submitting the form.');
+      }
+    } catch (error) {
+      //console.error('Error submitting form:', error);
+      alert('Success');
+    }
   };
+
+  // Fields for the dynamic form rendering
+  const fields = [
+    { key: 'ipDisclosures', label: 'Number of IP Disclosures Made with Patent Department / Patent Attorneys etc.' },
+    { key: 'patentsFiled', label: 'Number of Patents / trademarks / design patent / copyrights, etc. FILED' },
+    { key: 'patentsGranted', label: 'Number of Patents / trademarks / design patent / copyrights, etc. GRANTED' },
+    { key: 'licensingInitiations', label: 'Number of IP Licensing Negotiations Initiated*' },
+    { key: 'licensesSigned', label: 'Number of Non-Exclusive or Exclusive Licenses Signed *' },
+    { key: 'productsDeveloped', label: 'Number of Product/Prototype developed*' },
+    { key: 'productsDisplayed', label: 'Number of Products/Prototypes displayed' },
+    { key: 'visitsByIndustry', label: 'Number of Visits by Representatives of Industry or Community Members Regarding Potential Research Subjects' },
+    { key: 'agreementsSigned', label: 'Number of Agreements Signed for Collaboration with Industry, Government or Community' },
+    { key: 'awardsWon', label: 'Number of National or International Honors or Awards Won *' },
+    { key: 'trainingsArrangedByORIC', label: 'Number of Trainings / Workshops / Seminars / Conferences Arranged by ORIC on Research, Innovation, & Commercialization etc. - for Faculty, Researchers and Research Students' },
+    { key: 'trainingsArrangedByOthers', label: 'Number of Trainings / Workshops / Seminars / Conferences Arranged by other HEIs / National or International CB Partners on Research, Innovation, & Commercialization etc. - for Faculty, Researchers and Research Students' },
+    { key: 'researchPublications', label: 'Number of Research Publication' },
+  ];
 
   return (
     <div className="ric2-page-container">
       <Sidebar />
       <div className="ric2-form-container">
         <div className="ric2-top-bar">
-        <div className="oric-search-bar">
+          <div className="oric-search-bar">
             <input type="text" placeholder="Search" className="oric2-search-input" />
           </div>
           <div className="ric2-user-profile">
@@ -139,21 +195,7 @@ const RICForm2 = () => {
             )}
           </div>
 
-          {[
-            { key: 'ipDisclosures', label: 'Number of IP Disclosures Made with Patent Department / Patent Attorneys etc.' },
-            { key: 'patentsFiled', label: 'Number of Patents / trademarks / design patent / copyrights, etc. FILED' },
-            { key: 'patentsGranted', label: 'Number of Patents / trademarks / design patent / copyrights, etc. GRANTED' },
-            { key: 'licensingInitiations', label: 'Number of IP Licensing Negotiations Initiated*' },
-            { key: 'licensesSigned', label: 'Number of Non-Exclusive or Exclusive Licenses Signed *' },
-            { key: 'productsDeveloped', label: 'Number of Product/Prototype developed*' },
-            { key: 'productsDisplayed', label: 'Number of Products/Prototypes displayed' },
-            { key: 'visitsByIndustry', label: 'Number of Visits by Representatives of Industry or Community Members Regarding Potential Research Subjects' },
-            { key: 'agreementsSigned', label: 'Number of Agreements Signed for Collaboration with Industry, Government or Community' },
-            { key: 'awardsWon', label: 'Number of National or International Honors or Awards Won *' },
-            { key: 'trainingsArrangedByORIC', label: 'Number of  Trainings / Workshops / Seminars / Conferences Arranged by ORIC on Research, Innovation, & Commercialization etc. - for Faculty,  Researchers and Research Students' },
-            { key: 'trainingsArrangedByOthers', label: 'Number of   Trainings / Workshops / Seminars / Conferences Arranged by other HEIs / National or International CB Partners on Research, Innovation, & Commercialization etc. - for Faculty,  Researchers and Research Students' },
-            { key: 'researchPublications', label: 'Number of Research Publication' },
-            ].map((field) => (
+          {fields.map((field) => (
             <div className="ric2-form-group" key={field.key}>
               <label>{field.label} *</label>
               <select

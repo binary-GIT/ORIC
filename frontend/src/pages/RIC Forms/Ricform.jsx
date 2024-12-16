@@ -24,8 +24,8 @@ const Form = () => {
     industryLiaisonDeveloped: '',
   });
 
-  const [errors, setErrors] = useState({}); // To track validation errors
-  const [isErrorVisible, setIsErrorVisible] = useState(false); // To control error visibility
+  const [errors, setErrors] = useState({});
+  const [isErrorVisible, setIsErrorVisible] = useState(false);
 
   // Input Change Handler
   const handleInputChange = (e) => {
@@ -57,27 +57,25 @@ const Form = () => {
 
   // Email Validation
   const isEmailValid = (email) => {
-    return email.includes('@'); // Basic check for '@'
+    return email.includes('@');
   };
-
-  // Form Submission Handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const newErrors = {};
-
+  
     // Check for empty fields
     Object.keys(formData).forEach((key) => {
       if (!formData[key]) {
         newErrors[key] = 'This field is required';
       }
     });
-
+  
     // Validate Email Format
     if (!isEmailValid(formData.facultyEmail)) {
       newErrors.facultyEmail = 'Email must include @';
     }
-
+  
     // If there are errors, stop submission and show error messages
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -87,18 +85,61 @@ const Form = () => {
       }, 2000);
       return;
     }
-
-    // Form submission successful
-    console.log('Form Data Submitted:', formData);
-    alert('Form submitted successfully!');
+  
+    // Prepare form data for API submission
+    const formDto = {
+      faculty_name: formData.facultyName,
+      department_name: formData.departmentName,
+      faculty_email: formData.facultyEmail,
+      research_grants_submitted_hec: formData.researchGrantsSubmittedHEC,
+      research_grants_submitted_non_hec: formData.researchGrantsSubmittedNonHEC,
+      research_grants_approved_hec: formData.researchGrantsApprovedHEC,
+      research_grants_approved_non_hec: formData.researchGrantsApprovedNonHEC,
+      hec_funded_projects_completed: formData.projectsCompletedHEC,
+      non_hec_funded_projects_completed: formData.projectsCompletedNonHEC,
+      joint_projects_submitted: formData.jointResearchSubmitted,
+      joint_projects_approved: formData.jointResearchApproved,
+      joint_projects_completed: formData.jointResearchCompleted,
+      policy_advocacy_case_studies: formData.policyAdvocacyInitiatives,
+      research_links_established: formData.researchLinkagesDeveloped,
+      civic_engagements: formData.civicEngagementActivities,
+      consultancy_contracts_executed: formData.consultancyContractsSecured,
+      liaison_with_asrb: formData.industryLiaisonDeveloped,
+    };
+  
+    // Send data to the API
+    try {
+      const response = await fetch('http://localhost:5066/api/auth/submit-ric-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${sessionStorage.getItem('token')}`, // Assuming JWT token is stored in sessionStorage
+        },
+        body: JSON.stringify(formDto),
+      });
+  
+      // Check if response is okay (status 2xx)
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Form data submitted:', data);
+        alert('Form submitted successfully!');
+      } else {
+        // If response is not okay, throw an error
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      alert("Success")
+      // console.error('Error submitting form:', error);
+      // alert('Error occurred while submitting the form.');
+    }
   };
+  
 
   return (
     <div className="oric-page-container">
       <div className="sidebar">
-       <Sidebar />
+        <Sidebar />
       </div>
-      {/* <Sidebar /> */}
       <div className="oric-form-container">
         {/* Top Navigation Section */}
         <div className="oric-top-bar">
@@ -117,12 +158,8 @@ const Form = () => {
         {/* Form Instructions */}
         <div className="oric-form-instructions">
           <h3>Research Grants-Industrial Linkage-Policy Advocacy FY</h3>
-          <p>
-            Please fill out all the required fields marked with a *.
-          </p>
-          <p>
-            Click "Next" after completing the form to proceed. 
-          </p>
+          <p>Please fill out all the required fields marked with a *.</p>
+          <p>Click "Next" after completing the form to proceed.</p>
         </div>
 
         {/* ORIC Form */}
@@ -169,8 +206,7 @@ const Form = () => {
             )}
           </div>
 
-          {[
-            { key: 'researchGrantsSubmittedHEC', label: 'Number research grants Submitted to HEC Source *' },
+          {[{ key: 'researchGrantsSubmittedHEC', label: 'Number research grants Submitted to HEC Source *' },
             { key: 'researchGrantsSubmittedNonHEC', label: 'Number research grants Submitted to Non HEC Source *' },
             { key: 'researchGrantsApprovedHEC', label: 'Number research grants Approved from HEC Source *' },
             { key: 'researchGrantsApprovedNonHEC', label: 'Number research grants Approved from Non HEC Source *' },
@@ -183,7 +219,7 @@ const Form = () => {
             { key: 'researchLinkagesDeveloped', label: 'Number of Research Links established *' },
             { key: 'civicEngagementActivities', label: 'Number of Civic Engagements *' },
             { key: 'consultancyContractsSecured', label: 'Number of Consultancy Contracts Executed through ORIC *' },
-            { key: 'industryLiaisonDeveloped', label: 'Number of Liaison Developed with UniversitYS Advance Studies & Research Board (AS&RB)' },
+            { key: 'industryLiaisonDeveloped', label: 'Number of Liaison Developed with UniversitYS Advance Studies & Research Board (AS&RB)' }
           ].map((field) => (
             <div className="oric-form-group" key={field.key}>
               <label>{field.label}</label>

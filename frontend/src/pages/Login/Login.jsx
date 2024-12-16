@@ -1,24 +1,75 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Import styles for Toastify
+import 'react-toastify/dist/ReactToastify.css';
 import './LogIn.css';
 
 function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    const handleLogin = () => {
+    
+    const handleLogin = async () => {
         if (!email || !password) {
             toast.error('Please fill both fields!', {
-                position: toast.POSITION.TOP_CENTER, // Position the toast at the top center
-                autoClose: 3000, // Closes after 3 seconds
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: 3000,
             });
             return;
         }
-        navigate('/home');
+    
+        try {
+            console.log('Calling login API with:', { email, password });
+            const response = await fetch('http://localhost:5066/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+    
+            console.log('Response:', response.status);
+    
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Login successful:', data);
+                
+                // Assuming the token is in 'data.token' (check API response for actual key name)
+                if (data.token) {
+                    // Save JWT token to sessionStorage
+                    sessionStorage.setItem('token', data.token);
+                    console.log('Token saved to sessionStorage:', data.token);
+    
+                    toast.success('Login successful!', {
+                        position: toast.POSITION.TOP_CENTER,
+                        autoClose: 3000,
+                    });
+    
+                    // Navigate to the home page
+                    console.log('Navigating to /home...');
+                    navigate('/home');
+                } else {
+                    toast.error('Token not found in response', {
+                        position: toast.POSITION.TOP_CENTER,
+                        autoClose: 3000,
+                    });
+                }
+            } else {
+                const error = await response.text();
+                toast.error(`Login failed: ${error}`, {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 3000,
+                });
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+            toast.error('An unexpected error occurred. Please try again.', {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: 3000,
+            });
+        }
     };
+    
 
     return (
         <div className="login-container">
