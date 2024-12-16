@@ -129,6 +129,14 @@ body {
 }
 
 @media (max-width: 768px) {
+    .top-bar .search-bar .search-input {
+        min-width: 140px; 
+        max-width: 200px; 
+        padding: 5px;
+  }
+}
+
+@media (max-width: 768px) {
     .contact-container {
         padding: 10px;
     }
@@ -165,5 +173,11 @@ body {
 
     .contact-description {
         font-size: 13px;
+    }
+    .contact-info
+    {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
     }
 }

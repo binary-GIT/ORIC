@@ -25,7 +25,8 @@
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    margin-left: 25px;
+    margin: 0 auto;
+    /* margin-left: 25px; */
     background-color: #ffffff;
     min-height: 100vh; /* Stretch full page */
     overflow-y: auto;

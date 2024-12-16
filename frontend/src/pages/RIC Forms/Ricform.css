@@ -174,4 +174,10 @@
       font-size: 0.9rem;
     }
   }
-  
+  @media (max-width: 486px) {
+    .oric-user-info
+    {
+      /* margin-right: 400px; */
+      float: left;
+    }
+  }
